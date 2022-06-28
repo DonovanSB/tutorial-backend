@@ -18,8 +18,6 @@ async function bootstrap() {
   });
   await app.startAllMicroservices();
 
-  console.log(new Date());
-
   await app.listen(configService.get<number>('port'));
   console.log(`Application is running on: ${await app.getUrl()}`);
 }
