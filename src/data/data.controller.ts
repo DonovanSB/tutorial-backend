@@ -23,13 +23,13 @@ export class DataController {
 
   @MessagePattern('rtu/#')
   async createDataTopic(@Payload() { macAddress, date, payload }: any) {
-    if (!macAddress || !date || !payload) {
+    if (!macAddress || !payload) {
       return;
     }
     console.log('Message from', macAddress);
     await this.dataService.createData({
       macAddress,
-      date: new Date(date * 1000),
+      date: date ? new Date(date * 1000) : new Date(),
       payload,
     });
   }
