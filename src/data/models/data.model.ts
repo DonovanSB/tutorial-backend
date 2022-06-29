@@ -14,7 +14,7 @@ export class Data {
   date: Date;
 
   @Prop({ type: Object })
-  data: object;
+  payload: object;
 }
 
 export const DataSchema = SchemaFactory.createForClass(Data);

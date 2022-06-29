@@ -9,5 +9,5 @@ export class CreateDataDto {
   readonly date: Date;
 
   @IsObject()
-  readonly data: object;
+  readonly payload: object;
 }
